@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    
+    parameters {
+        string(name: 'USERNAME', defaultValue: 'guest', description: 'Enter your username')
+    }
+    
+    stages {
+        stage('Print Message') {
+            steps {
+                echo "Hello, ${params.USERNAME}! Welcome to Jenkins."
+            }
+        }
+    }
+}
